@@ -1,0 +1,17 @@
+server:
+  port: 8007
+
+spring:
+  application:
+    name: cloud-consul-consumer
+  cloud:
+    consul:
+      discovery:
+        service-name: ${spring.application.name}
+      host: localhost
+      port: 8500
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info

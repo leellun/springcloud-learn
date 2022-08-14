@@ -1,0 +1,9 @@
+server:
+  port: 8009
+
+spring:
+  application:
+    name: cloud-ribbon-provider
+  cloud:
+    zookeeper:
+      connect-string: 192.168.66.11:2181

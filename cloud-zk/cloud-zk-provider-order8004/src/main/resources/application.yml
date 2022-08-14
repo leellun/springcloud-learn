@@ -1,0 +1,9 @@
+server:
+  port: 8004
+
+spring:
+  application:
+    name: cloud-zk-provider
+  cloud:
+    zookeeper:
+      connect-string: 192.168.66.11:2181
