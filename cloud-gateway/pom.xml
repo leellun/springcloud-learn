@@ -1,22 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
-    <modules>
-        <module>cloud-rest</module>
-        <module>cloud-zk</module>
-        <module>cloud-consul</module>
-        <module>cloud-ribbon</module>
-        <module>cloud-feign</module>
-        <module>cloud-hystrix</module>
-        <module>cloud-zuul</module>
-        <module>cloud-gateway</module>
-    </modules>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>cloud-gateway</artifactId>
+    <name>cloud-gateway</name>
     <groupId>com.newland</groupId>
-    <artifactId>springcloud-learn</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>springcloud</name>
-
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -28,6 +17,11 @@
         <mybatis-plus.version>3.4.1</mybatis-plus.version>
         <mysql-connector-java.version>8.0.30</mysql-connector-java.version>
     </properties>
+    <modules>
+        <module>cloud-gateway-gateway9527</module>
+        <module>cloud-service9531</module>
+        <module>cloud-service9532</module>
+    </modules>
     <dependencyManagement>
         <dependencies>
             <!--Spring Cloud-->
@@ -91,15 +85,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
