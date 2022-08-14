@@ -1,0 +1,12 @@
+Docker：
+docker run -d -p 9411:9411 openzipkin/zipkin
+
+Java：
+curl -sSL https://zipkin.io/quickstart.sh | bash -s
+java -jar zipkin.jar
+
+Running from Source：
+git clone https://github.com/openzipkin/zipkin
+cd zipkin
+./mvnw -DskipTests --also-make -pl zipkin-server clean install
+java -jar ./zipkin-server/target/zipkin-server-*exec.jar
