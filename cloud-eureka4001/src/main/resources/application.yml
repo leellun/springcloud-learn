@@ -1,0 +1,16 @@
+server:
+  port: 4001
+spring:
+  application:
+    name: cloud-eureka-server4001
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:4001/eureka/
+  server:
+    # true:关闭自我保护机制，保证不可用服务被及时踢除
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 2000 #让服务端每隔2秒扫描一次，是服务能尽快的剔除
+

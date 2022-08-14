@@ -7,6 +7,7 @@
         <module>cloud-zk</module>
         <module>cloud-consul</module>
         <module>cloud-ribbon</module>
+        <module>cloud-feign</module>
     </modules>
     <groupId>com.newland</groupId>
     <artifactId>springcloud-learn</artifactId>
@@ -66,6 +67,12 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector-java.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-feign -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-feign</artifactId>
+                <version>1.4.7.RELEASE</version>
             </dependency>
 
         </dependencies>

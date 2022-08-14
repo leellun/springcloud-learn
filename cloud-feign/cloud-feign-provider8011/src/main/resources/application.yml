@@ -1,0 +1,12 @@
+server:
+  port: 8011
+
+spring:
+  application:
+    name: cloud-feign-provider
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:4001/eureka
+    fetch-registry: true
+    register-with-eureka: true
