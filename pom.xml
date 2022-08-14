@@ -9,6 +9,7 @@
         <module>cloud-ribbon</module>
         <module>cloud-feign</module>
         <module>cloud-hystrix</module>
+        <module>cloud-zuul</module>
     </modules>
     <groupId>com.newland</groupId>
     <artifactId>springcloud-learn</artifactId>

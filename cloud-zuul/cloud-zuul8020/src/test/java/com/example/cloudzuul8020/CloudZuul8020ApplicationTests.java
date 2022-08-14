@@ -1,10 +1,10 @@
-package com.example.cloudprovider8013;
+package com.example.cloudzuul8020;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CloudProvider8013ApplicationTests {
+class CloudZuul8020ApplicationTests {
 
     @Test
     void contextLoads() {

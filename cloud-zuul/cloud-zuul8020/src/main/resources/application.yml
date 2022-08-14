@@ -1,0 +1,19 @@
+server:
+  port: 8020
+
+spring:
+  application:
+    name: cloud-zuul8020
+zuul:
+  routes:
+    path1:
+      path: /path1/**
+      service-id: cloud-zuul-ribbon
+    path2:
+      path: /path2/**
+      service-id: cloud-zuul-feign
+eureka:
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:4001/eureka
