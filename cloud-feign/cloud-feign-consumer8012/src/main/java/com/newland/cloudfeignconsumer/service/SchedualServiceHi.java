@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(value = "cloud-feign-provider")
-@Component
 public interface SchedualServiceHi {
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
     String sayHiFromClientOne(@RequestParam("name") String name);

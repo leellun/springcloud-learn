@@ -1,0 +1,15 @@
+server:
+  port: 8015
+
+spring:
+  application:
+    name: cloud-hystrix-feign
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:4001/eureka
+    fetch-registry: true
+    register-with-eureka: true
+feign:
+  hystrix:
+    enabled: true

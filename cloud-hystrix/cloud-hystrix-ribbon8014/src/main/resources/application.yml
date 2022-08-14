@@ -1,0 +1,17 @@
+server:
+  port: 8014
+
+spring:
+  application:
+    name: cloud-hystrix-ribbon
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:4001/eureka
+    fetch-registry: true
+    register-with-eureka: true
+
+hystrix:
+  metrics:
+    enabled: true
+    polling-interval-ms: 1000
