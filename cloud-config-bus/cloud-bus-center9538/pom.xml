@@ -8,14 +8,27 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>cloud-config-center9541</artifactId>
+    <artifactId>cloud-bus-center9538</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>cloud-config-center9541</name>
-    <description>cloud-config-center9541</description>
+    <name>cloud-bus-center9538</name>
     <dependencies>
+        <!--添加消息总线RabbitMQ支持-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
 

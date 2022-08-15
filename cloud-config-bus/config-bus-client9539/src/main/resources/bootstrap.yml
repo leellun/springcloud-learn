@@ -1,0 +1,26 @@
+server:
+  port: 9539
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:4001/eureka
+spring:
+  application:
+    name: config-bus-client9539
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://localhost:9538
+  rabbitmq:
+    host: 192.168.66.11
+    port: 5672
+    username: leellun
+    password: 123456
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

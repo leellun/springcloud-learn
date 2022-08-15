@@ -8,13 +8,24 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>config-client9542</artifactId>
+	<artifactId>config-bus-client9539</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>config-client9542</name>
+	<name>config-bus-client9539</name>
 	<dependencies>
+		<!--eureka-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<!--eureka-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-client</artifactId>
+		</dependency>
+		<!--bus消息总线-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
 		<!--actuator暴露端点-->
 		<dependency>

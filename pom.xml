@@ -12,6 +12,7 @@
         <module>cloud-zuul</module>
         <module>cloud-gateway</module>
         <module>cloud-config</module>
+        <module>cloud-config-bus</module>
     </modules>
     <groupId>com.newland</groupId>
     <artifactId>springcloud-learn</artifactId>

@@ -1,0 +1,32 @@
+server:
+  port: 9538
+spring:
+  application:
+    name: cloud-bus-center9538
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/myselfyou/k8sdocker.git
+          search-paths:
+            - config
+      label: master
+
+  rabbitmq:
+    host: 192.168.66.11
+    port: 5672
+    username: leellun
+    password: 123456
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:4001/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'

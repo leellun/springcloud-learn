@@ -1,10 +1,6 @@
 server:
   port: 9542
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:4001/eureka
 spring:
   application:
     name: config-client9542
@@ -13,14 +9,3 @@ spring:
       label: master
       profile: dev
       uri: http://localhost:9541
-  rabbitmq:
-    host: 192.168.66.11
-    port: 5672
-    username: leellun
-    password: 123456
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: bus-refresh
