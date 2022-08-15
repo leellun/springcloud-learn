@@ -11,6 +11,7 @@
         <module>cloud-hystrix</module>
         <module>cloud-zuul</module>
         <module>cloud-gateway</module>
+        <module>cloud-config</module>
     </modules>
     <groupId>com.newland</groupId>
     <artifactId>springcloud-learn</artifactId>
