@@ -9,10 +9,6 @@ import org.springframework.messaging.MessageChannel;
 import javax.annotation.Resource;
 import java.util.UUID;
 
-/**
- * @auther zzyy
- * @create 2020-02-22 10:56
- */
 @EnableBinding(Source.class) //定义消息的推送管道
 public class MessageProviderImpl implements IMessageProvider {
     @Resource
