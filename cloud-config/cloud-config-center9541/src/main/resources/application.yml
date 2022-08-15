@@ -1,6 +1,5 @@
 server:
   port: 9541
-
 spring:
   application:
     name: cloud-config-center9541
@@ -9,9 +8,9 @@ spring:
       server:
         git:
           # ??
-          uri: sdf
+          uri: https://gitee.com/myselfyou/k8sdocker.git
           search-paths: #????
-            - springcloud-config
+            - config
       label: master #????
 
   rabbitmq:
@@ -24,10 +23,12 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:4001/eureka
+    register-with-eureka: true
+    fetch-registry: true
 
 ##rabbitmq????,??bus???????
 management:
   endpoints: #??bus???????
     web:
       exposure:
-        include: 'bus-refresh''
+        include: 'bus-refresh'
