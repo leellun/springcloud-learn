@@ -16,6 +16,7 @@
         <module>cloud-stream-rabbitmq</module>
         <module>cloud-alibaba-nacos</module>
         <module>cloud-alibaba-sentinel</module>
+        <module>cloud-alibaba-seata</module>
     </modules>
     <groupId>com.newland</groupId>
     <artifactId>springcloud-learn</artifactId>
@@ -31,7 +32,9 @@
         <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
         <druid-spring-boot-starter.version>1.2.11</druid-spring-boot-starter.version>
         <mybatis-plus.version>3.4.1</mybatis-plus.version>
+        <velocity.version>2.0</velocity.version>
         <mysql-connector-java.version>8.0.30</mysql-connector-java.version>
+        <io.seata.version>1.4.2</io.seata.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -70,19 +73,39 @@
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
+            <!--mybatis-plus 代码生成器-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!-- Mybatis Plus 代码生成器模板引擎,  -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
             <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector-java.version}</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-feign -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-feign</artifactId>
                 <version>1.4.7.RELEASE</version>
             </dependency>
-
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-spring-boot-starter</artifactId>
+                <version>${io.seata.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-all</artifactId>
+                <version>${io.seata.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>

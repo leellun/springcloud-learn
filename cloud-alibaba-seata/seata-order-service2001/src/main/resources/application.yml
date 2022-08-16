@@ -1,0 +1,31 @@
+server:
+  port: 2001
+spring:
+  application:
+    name: seata-order-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3308/seata_order
+    username: leellun
+    password: liulun666
+  devtools:
+    add-properties: false
+
+feign:
+  hystrix:
+    enabled: false
+
+logging:
+  level:
+    io:
+      seata: info
+
+mybatis-plus:
+  mapper-locations: classpath:xml/*.xml
+seata:
+  tx-service-group: default_tx_group
+

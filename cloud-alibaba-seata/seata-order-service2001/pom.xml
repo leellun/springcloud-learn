@@ -3,19 +3,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>cloud-config</artifactId>
+        <artifactId>cloud-alibaba-seata</artifactId>
         <groupId>com.newland</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>cloud-config-center9541</artifactId>
+    <artifactId>seata-order-service2001</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>cloud-config-center9541</name>
-    <description>cloud-config-center9541</description>
+    <name>seata-order-service2001</name>
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <groupId>com.newland</groupId>
+            <artifactId>seata-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
