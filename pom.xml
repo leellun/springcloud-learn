@@ -15,6 +15,7 @@
         <module>cloud-config-bus</module>
         <module>cloud-stream-rabbitmq</module>
         <module>cloud-alibaba-nacos</module>
+        <module>cloud-alibaba-sentinel</module>
     </modules>
     <groupId>com.newland</groupId>
     <artifactId>springcloud-learn</artifactId>
@@ -27,7 +28,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
-        <spring-cloud-alibaba.version>2.2.2.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
         <druid-spring-boot-starter.version>1.2.11</druid-spring-boot-starter.version>
         <mybatis-plus.version>3.4.1</mybatis-plus.version>
         <mysql-connector-java.version>8.0.30</mysql-connector-java.version>
