@@ -14,6 +14,7 @@
         <module>cloud-config</module>
         <module>cloud-config-bus</module>
         <module>cloud-stream-rabbitmq</module>
+        <module>cloud-alibaba-nacos</module>
     </modules>
     <groupId>com.newland</groupId>
     <artifactId>springcloud-learn</artifactId>
