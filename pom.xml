@@ -17,6 +17,7 @@
         <module>cloud-alibaba-nacos</module>
         <module>cloud-alibaba-sentinel</module>
         <module>cloud-alibaba-seata</module>
+        <module>springcloud-hmily-tcc</module>
     </modules>
     <groupId>com.newland</groupId>
     <artifactId>springcloud-learn</artifactId>
