@@ -39,7 +39,7 @@ import java.math.BigDecimal;
  *
  * @author xiaoyu
  */
-@Service
+@Service("paymentService")
 @SuppressWarnings("all")
 public class PaymentServiceImpl implements IPaymentService {
     

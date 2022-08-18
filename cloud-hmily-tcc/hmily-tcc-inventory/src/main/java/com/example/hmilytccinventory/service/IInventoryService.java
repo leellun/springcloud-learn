@@ -2,6 +2,7 @@ package com.example.hmilytccinventory.service;
 
 import com.example.hmilytccinventory.domain.Inventory;
 import com.newland.inventory.dto.InventoryDTO;
+import org.dromara.hmily.annotation.HmilyTCC;
 
 /**
  * <p>
@@ -19,6 +20,7 @@ public interface IInventoryService {
      * @param inventoryDTO 库存DTO对象
      * @return true boolean
      */
+    @HmilyTCC
     Boolean decrease(InventoryDTO inventoryDTO);
 
     /**
@@ -43,6 +45,7 @@ public interface IInventoryService {
      * @param inventoryDTO dto
      * @return true boolean
      */
+    @HmilyTCC
     Boolean mockWithTryException(InventoryDTO inventoryDTO);
 
     /**
@@ -51,5 +54,6 @@ public interface IInventoryService {
      * @param inventoryDTO dto
      * @return true boolean
      */
+    @HmilyTCC
     Boolean mockWithTryTimeout(InventoryDTO inventoryDTO);
 }

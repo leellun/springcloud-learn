@@ -18,6 +18,7 @@ package com.example.hmilytccorder.service;
 
 
 import com.example.hmilytccorder.domain.Order;
+import org.dromara.hmily.annotation.HmilyTCC;
 
 /**
  * PaymentService.
@@ -31,6 +32,7 @@ public interface IPaymentService {
      *
      * @param order 订单实体
      */
+    @HmilyTCC
     void makePayment(Order order);
     
     /**

@@ -2,7 +2,9 @@ package com.example.hmilytccinventory.controller;
 
 
 import com.example.hmilytccinventory.service.IInventoryService;
+import com.example.hmilytccinventory.service.impl.InventoryServiceImpl;
 import com.newland.inventory.dto.InventoryDTO;
+import org.dromara.hmily.spring.utils.SpringBeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
