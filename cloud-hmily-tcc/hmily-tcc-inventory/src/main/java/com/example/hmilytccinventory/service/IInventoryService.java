@@ -20,7 +20,6 @@ public interface IInventoryService {
      * @param inventoryDTO 库存DTO对象
      * @return true boolean
      */
-    @HmilyTCC
     Boolean decrease(InventoryDTO inventoryDTO);
 
     /**
@@ -45,7 +44,6 @@ public interface IInventoryService {
      * @param inventoryDTO dto
      * @return true boolean
      */
-    @HmilyTCC
     Boolean mockWithTryException(InventoryDTO inventoryDTO);
 
     /**
@@ -54,6 +52,5 @@ public interface IInventoryService {
      * @param inventoryDTO dto
      * @return true boolean
      */
-    @HmilyTCC
     Boolean mockWithTryTimeout(InventoryDTO inventoryDTO);
 }

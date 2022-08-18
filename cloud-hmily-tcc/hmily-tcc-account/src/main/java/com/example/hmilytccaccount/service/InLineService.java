@@ -10,6 +10,5 @@ public interface InLineService {
     /**
      * 测试内嵌的时候处理.
      */
-    @HmilyTCC
     void test();
 }

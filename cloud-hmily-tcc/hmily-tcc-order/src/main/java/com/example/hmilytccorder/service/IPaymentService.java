@@ -32,7 +32,6 @@ public interface IPaymentService {
      *
      * @param order 订单实体
      */
-    @HmilyTCC
     void makePayment(Order order);
     
     /**
