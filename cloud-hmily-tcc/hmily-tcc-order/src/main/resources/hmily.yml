@@ -1,0 +1,11 @@
+hmily:
+  server:
+    configMode: nacos
+
+remote:
+  nacos:
+    server: 127.0.0.1:8848 # nacos服务地址
+    dataId: hmily-order  # dataId
+    group: hmily-test # group
+    timeoutMs: 6000 #超时时间（ms）
+    fileExtension: yml  #nacos上配置文件的格式（properties或者yml）二选一

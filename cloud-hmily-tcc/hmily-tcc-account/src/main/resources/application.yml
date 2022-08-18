@@ -1,1 +1,24 @@
+server:
+  port: 8885
+  address: 0.0.0.0
+  servlet:
+    context-path: /account-service
 
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3308/tcc_account?useUnicode=true&characterEncoding=utf8
+    username: leellun
+    password: liulun666
+  application:
+    name: account-service
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+feign:
+  hystrix:
+    enabled: false
+    # 在feign中开启hystrix功能，默认情况下feign不开启hystrix功能

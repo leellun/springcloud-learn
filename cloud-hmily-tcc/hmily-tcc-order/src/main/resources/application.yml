@@ -1,0 +1,23 @@
+server:
+  port: 8889
+  address: 0.0.0.0
+  servlet:
+    context-path: /order-service
+
+spring:
+  datasource:
+    driver-class-name:  com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3308/tcc_order?useUnicode=true&characterEncoding=utf8
+    username: leellun
+    password: liulun666
+  application:
+    name: order-service
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+feign:
+  hystrix:
+    enabled : false

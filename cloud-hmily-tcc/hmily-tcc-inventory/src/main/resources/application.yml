@@ -1,0 +1,24 @@
+server:
+  port: 8887
+  address: 0.0.0.0
+  servlet:
+    context-path: /inventory-service
+
+spring:
+  datasource:
+    driver-class-name:  com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3308/tcc_stock?useUnicode=true&characterEncoding=utf8
+    username: leellun
+    password: liulun666
+  application:
+    name: inventory-service
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+feign:
+  hystrix:
+    enabled : false
+    # 在feign中开启hystrix功能，默认情况下feign不开启hystrix功能
