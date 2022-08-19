@@ -4,11 +4,6 @@ import com.example.hmilytccaccount.service.InLineService;
 import org.dromara.hmily.annotation.HmilyTCC;
 import org.springframework.stereotype.Component;
 
-/**
- * The type In line service.
- *
- * @author xiaoyu(Myth)
- */
 @Component
 public class InLineServiceImpl implements InLineService {
 

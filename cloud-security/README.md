@@ -1,0 +1,12 @@
+# 老师入口
+1 申请老师权限token
+http://localhost:9000/api/uaa/oauth/token?client_id=c1&client_secret=secret&grant_type=password&username=kakaxi&password=123
+2 带着token验证接口
+http://localhost:9000/api/school/student/grade
+http请求头（bearer的类型和jwt都是步骤一获取的）：
+bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsicmVzMSJdLCJ1c2VyX25hbWUiOiJ7XCJmdWxsbmFtZVwiOlwi6bij5Lq6XCIsXCJpZFwiOjIsXCJwYXNzd29yZFwiOlwiJDJhJDEwJGlaVWR0WmFUTy9SVjFpbmdPdjVLSk9WMFVEWUJZRkJjNm5BTXNKRkVXT0ZkS1FnY1ouc2MyXCIsXCJ1c2VybmFtZVwiOlwibWluZ3JlblwifSIsInNjb3BlIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiLCJST0xFX0FQSSJdLCJleHAiOjE2NjExNjY0MTIsImF1dGhvcml0aWVzIjpbInN0dWRlbnQiXSwianRpIjoiMWQyM2QzNWYtNTBiMy00MjU1LTk2MDktZjhmNDJlMDk3ZTgyIiwiY2xpZW50X2lkIjoiYzEifQ.8DP-xqc6JnPe-_NDjTABUrfsALJ8oqSs_fGPzrodxEI
+# 学生入口
+1 申请权限token
+http://localhost:9000/api/uaa/oauth/token?client_id=c1&client_secret=secret&grant_type=password&username=mingren&password=123
+
+2 后面是一样的

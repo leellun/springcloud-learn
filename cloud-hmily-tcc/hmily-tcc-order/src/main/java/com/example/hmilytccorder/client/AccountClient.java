@@ -26,11 +26,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigDecimal;
 
-/**
- * The interface Account client.
- *
- * @author xiaoyu
- */
 @FeignClient(value = "account-service")
 public interface AccountClient {
     

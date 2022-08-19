@@ -22,11 +22,6 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
-/**
- * The type Account hystrix.
- *
- * @author xiaoyu(Myth)
- */
 @Component
 public class AccountHystrix implements AccountClient {
 

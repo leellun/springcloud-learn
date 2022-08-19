@@ -18,11 +18,6 @@ package com.example.hmilytccorder.enums;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-/**
- * The enum Order status enum.
- *
- * @author xiaoyu
- */
 @Getter
 @AllArgsConstructor
 public enum OrderStatusEnum {

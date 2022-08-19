@@ -2,9 +2,6 @@ package com.example.hmilytccaccount.service;
 
 import org.dromara.hmily.annotation.HmilyTCC;
 
-/**
- * @author xiaoyu(Myth)
- */
 public interface InLineService {
 
     /**

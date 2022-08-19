@@ -20,11 +20,6 @@ package com.example.hmilytccorder.service;
 import com.example.hmilytccorder.domain.Order;
 import org.dromara.hmily.annotation.HmilyTCC;
 
-/**
- * PaymentService.
- *
- * @author xiaoyu
- */
 public interface IPaymentService {
     
     /**

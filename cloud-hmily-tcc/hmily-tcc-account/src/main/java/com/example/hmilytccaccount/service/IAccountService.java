@@ -20,11 +20,6 @@ import com.example.hmilytccaccount.domain.Account;
 import com.newland.account.dto.AccountDTO;
 import com.newland.account.dto.AccountNestedDTO;
 
-/**
- * The interface Account service.
- *
- * @author xiaoyu
- */
 public interface IAccountService {
 
     /**

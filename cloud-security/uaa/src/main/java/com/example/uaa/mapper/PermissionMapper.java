@@ -9,11 +9,6 @@ import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
-/**
- * @Description:
- * @Author: zhurongsheng
- * @Date: 2020/7/11 16:43
- */
 @Mapper
 public interface PermissionMapper extends BaseMapper<PermissionEntry> {
 

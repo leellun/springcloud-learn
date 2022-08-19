@@ -20,11 +20,6 @@ import lombok.Data;
 
 import java.io.Serializable;
 
-/**
- * The type Inventory dto.
- *
- * @author xiaoyu
- */
 @Data
 public class InventoryDTO implements Serializable {
 

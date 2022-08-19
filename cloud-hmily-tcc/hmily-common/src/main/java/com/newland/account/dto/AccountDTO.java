@@ -21,11 +21,6 @@ import lombok.Data;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- * The type Account dto.
- *
- * @author xiaoyu
- */
 @Data
 public class AccountDTO implements Serializable {
 

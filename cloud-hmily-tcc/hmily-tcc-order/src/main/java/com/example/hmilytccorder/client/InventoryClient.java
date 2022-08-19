@@ -23,11 +23,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-/**
- * The interface Inventory client.
- *
- * @author xiaoyu
- */
 @FeignClient(value = "inventory-service")
 public interface InventoryClient {
     

@@ -34,11 +34,6 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
-/**
- * PaymentServiceImpl.
- *
- * @author xiaoyu
- */
 @Service("paymentService")
 @SuppressWarnings("all")
 public class PaymentServiceImpl implements IPaymentService {

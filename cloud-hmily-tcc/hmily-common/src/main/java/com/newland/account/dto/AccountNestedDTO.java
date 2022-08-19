@@ -21,11 +21,6 @@ import lombok.Data;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- * The type Account nested dto.
- *
- * @author bbaiggey
- */
 @Data
 public class AccountNestedDTO implements Serializable {
 

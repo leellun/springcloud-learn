@@ -19,9 +19,6 @@ package com.example.hmilytccorder.client;
 import com.newland.inventory.dto.InventoryDTO;
 import org.springframework.stereotype.Component;
 
-/**
- * @author xiaoyu(Myth)
- */
 @Component
 public class InventoryHystrix implements InventoryClient {
 
