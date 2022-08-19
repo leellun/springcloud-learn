@@ -12,6 +12,7 @@
     <artifactId>cloud-hmily-tcc</artifactId>
     <name>cloud-hmily-tcc</name>
     <modules>
+        <module>hmily-common</module>
         <module>hmily-tcc-inventory</module>
         <module>hmily-tcc-account</module>
         <module>hmily-tcc-order</module>

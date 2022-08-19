@@ -18,7 +18,6 @@
         <module>cloud-alibaba-sentinel</module>
         <module>cloud-alibaba-seata</module>
         <module>cloud-hmily-tcc</module>
-        <module>cloud-hmily-tcc/hmily-common</module>
     </modules>
     <groupId>com.newland</groupId>
     <artifactId>springcloud-learn</artifactId>
