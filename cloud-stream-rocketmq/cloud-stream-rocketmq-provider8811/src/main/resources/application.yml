@@ -1,0 +1,40 @@
+server:
+  port: 8811
+spring:
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 192.168.66.11:9876
+        bindings:
+          input1:
+            consumer:
+              # 是否使用广播消费，默认为 false 使用集群消费
+              broadcasting: false
+      bindings:
+        output:
+          group: please_rename_unique_group_name
+          content-type: application/json # 默认 application/json
+          destination: TopicTest
+        input:
+          group: please_rename_unique_group_name
+          content-type: application/json # 默认 application/json
+          destination: TopicTest
+        output1:
+          group: please_rename_unique_group_name2
+          content-type: application/json # 默认 application/json
+          destination: TopicTest1
+        input1:
+          group: please_rename_unique_group_name2
+          content-type: application/json # 默认 application/json
+          destination: TopicTest1
+  level:
+    com:
+      alibaba:
+        cloud:
+          stream:
+            binder:
+              rocketmq: INFO
+
+
+

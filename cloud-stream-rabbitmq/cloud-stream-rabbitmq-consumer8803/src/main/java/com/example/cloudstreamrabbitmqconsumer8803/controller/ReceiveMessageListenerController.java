@@ -1,4 +1,4 @@
-package com.example.cloudstreamrabbitmqconsumer8802.controller;
+package com.example.cloudstreamrabbitmqconsumer8803.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.stream.annotation.EnableBinding;
