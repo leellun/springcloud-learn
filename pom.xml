@@ -23,6 +23,7 @@
         <module>cloud-stream-rocketmq</module>
         <module>cloud-tx-rocketmq</module>
         <module>cloud-stream-kafka</module>
+        <module>cloud-dubbo</module>
     </modules>
     <groupId>com.newland</groupId>
     <artifactId>springcloud-learn</artifactId>
