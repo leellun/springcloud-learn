@@ -13,11 +13,6 @@ spring:
       rocketmq:
         binder:
           name-server: 192.168.66.11:9876
-        bindings:
-          input1:
-            consumer:
-              # 是否使用广播消费，默认为 false 使用集群消费
-              broadcasting: false
 
 logging:
   level:

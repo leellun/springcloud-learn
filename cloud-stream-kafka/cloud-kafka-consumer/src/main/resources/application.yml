@@ -1,0 +1,23 @@
+server:
+  port: 7602
+spring:
+  cloud:
+    stream:
+      bindings:
+        es_default_input:
+          destination: es_default_topic
+          binder: kafka
+          group: es_default_group
+          consumer:
+            concurrency: 2 # 入站消费者并发性
+        #告警的输入、输出通道（多主题、分组测试用，实际开发中根据业务需求定义）
+        es_alarm_input:
+          destination: es_alarm_topic
+          binder: kafka
+          group: es_alarm_group
+      kafka:
+        binder:
+          brokers: 192.168.66.11:9092
+          required-acks: 1
+  application:
+    name: cloud-kafka-consumer

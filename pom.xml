@@ -22,6 +22,7 @@
         <module>cloud-security</module>
         <module>cloud-stream-rocketmq</module>
         <module>cloud-tx-rocketmq</module>
+        <module>cloud-stream-kafka</module>
     </modules>
     <groupId>com.newland</groupId>
     <artifactId>springcloud-learn</artifactId>

@@ -41,7 +41,6 @@ public class AccountInfoServiceImpl implements IAccountInfoService {
          * Object arg 参数
          */
         rocketMQTemplate.sendMessageInTransaction("producer_group_txmsg_bank1","topic_txmsg",message,null);
-
     }
 
     //更新账户，扣减金额
