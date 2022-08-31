@@ -8,3 +8,15 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+feign:
+  hystrix:
+    enabled: true
+  httpclient:
+    connection-timeout: 2000
+    connection-timer-repeat: 3000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
