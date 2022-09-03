@@ -1,9 +1,7 @@
 package com.example.uaa.security.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.code.AuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.code.JdbcAuthorizationCodeServices;
@@ -46,7 +44,7 @@ public class TokenConfig {
     @Bean
     public AuthorizationServerTokenServices tokenService(ClientDetailsService clientDetailsService, TokenStore tokenStore
             , JwtAccessTokenConverter accessTokenConverter) {
-        DefaultTokenServices service = new MyDefaultTokenServices();
+        DefaultTokenServices service = new DefaultTokenServices();
         service.setClientDetailsService(clientDetailsService);
         service.setSupportRefreshToken(true);
         service.setTokenStore(tokenStore);
