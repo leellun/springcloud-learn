@@ -24,6 +24,7 @@
         <module>cloud-tx-rocketmq</module>
         <module>cloud-stream-kafka</module>
         <module>cloud-dubbo</module>
+        <module>cloud-sso</module>
     </modules>
     <groupId>com.newland</groupId>
     <artifactId>springcloud-learn</artifactId>
@@ -43,6 +44,7 @@
         <mysql-connector-java.version>8.0.30</mysql-connector-java.version>
         <io.seata.version>1.4.2</io.seata.version>
         <mybatis.version>2.2.2</mybatis.version>
+        <commons-pool2.version>2.9.0</commons-pool2.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -125,6 +127,11 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-collections4</artifactId>
                 <version>4.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

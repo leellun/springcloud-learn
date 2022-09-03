@@ -10,6 +10,7 @@ import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
 import org.springframework.core.io.buffer.DataBuffer;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
@@ -29,7 +30,8 @@ import java.util.Map;
 @Slf4j
 public class GatewayFilterConfig implements GlobalFilter, Ordered {
 
-
+    @Autowired
+    private RedisTemplate redisTemplate;
     @Autowired
     private TokenStore tokenStore;
 
@@ -54,6 +56,14 @@ public class GatewayFilterConfig implements GlobalFilter, Ordered {
             Map<String, Object> additionalInformation = oAuth2AccessToken.getAdditionalInformation();
             //取出用户身份信息
             String principal = MapUtils.getString(additionalInformation, "user_name");
+            JSONObject user = JSONObject.parseObject(principal);
+            Long time = (Long) redisTemplate.opsForValue().get(user.getString("username") + "===//");
+            if (time == null || !time.equals(user.getLongValue("time"))) {
+                JSONObject json = new JSONObject();
+                json.put("status", HttpStatus.UNAUTHORIZED.value());
+                json.put("data", "请重新登录");
+                return buildReturnMono(json, exchange);
+            }
             //获取用户权限
             List<String> authorities = (List<String>) additionalInformation.get("authorities");
             JSONObject jsonObject = new JSONObject();

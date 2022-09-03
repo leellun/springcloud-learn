@@ -8,3 +8,19 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+
+security:
+  oauth2:
+    client:
+      user-authorization-uri: http://localhost:9000/api/uaa/oauth/authorize
+      access-token-uri: http://localhost:9000/api/uaa/oauth/token
+      client-secret: secret
+      client-id: c1
+    resource:
+      jwt:
+        key-uri: http://localhost:9000/api/uaa/oauth/token_key
+        key-value: uaa
+
+logging:
+  level:
+    root: debug

@@ -23,3 +23,12 @@ uua：权限认证服务
 gateway：网关（通过GlobalFilter拦截请求进行鉴权，对uua请求放行，解析Authorization 为json-token）
 
 Hystrix的THREAD和SEMAPHORE策略
+
+
+
+/oauth/authorize:授权端点
+/oauth/token:令牌端点
+/oauth/confirm_access:用户确认授权提交端点
+/oauth/error:授权服务错误信息端点
+/oauth/check_token:用于资源访问的令牌解析端点
+/oauth/token_key:提供公有密钥的端点,如果使用的JWT令牌的话

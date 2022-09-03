@@ -2,6 +2,7 @@ package com.example.uaa.security.service;
 
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.example.uaa.entity.PermissionEntry;
 import com.example.uaa.servie.PermissionService;
@@ -44,8 +45,11 @@ public class SecurityUserDetailService implements UserDetailsService {
             authorities = new String[codes.size()];
             codes.toArray(authorities);
         }
-        //身份令牌
         String principal = JSON.toJSONString(user);
+        JSONObject jsonObject = JSONObject.parseObject(principal);
+        jsonObject.put("time", System.currentTimeMillis());
+        //身份令牌
+        principal = jsonObject.toJSONString();
         return User.withUsername(principal).password(user.getPassword()).authorities(authorities).build();
     }
 }

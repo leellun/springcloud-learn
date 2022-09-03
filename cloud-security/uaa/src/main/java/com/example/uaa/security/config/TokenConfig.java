@@ -1,7 +1,9 @@
 package com.example.uaa.security.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.code.AuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.code.JdbcAuthorizationCodeServices;
@@ -20,12 +22,11 @@ import java.util.Collections;
  */
 @Configuration
 public class TokenConfig {
-
+    private static final int accessTokenValiditySeconds = 60 * 60 * 12; // default 12 hours.
     /**
      * 秘钥串
      */
     private static final String SIGNING_KEY = "uaa";
-
 
     @Bean
     public TokenStore tokenStore() {
@@ -43,12 +44,13 @@ public class TokenConfig {
      * 配置令牌管理
      */
     @Bean
-    public AuthorizationServerTokenServices tokenService(ClientDetailsService clientDetailsService,TokenStore tokenStore
-            ,JwtAccessTokenConverter accessTokenConverter) {
-        DefaultTokenServices service = new DefaultTokenServices();
+    public AuthorizationServerTokenServices tokenService(ClientDetailsService clientDetailsService, TokenStore tokenStore
+            , JwtAccessTokenConverter accessTokenConverter) {
+        DefaultTokenServices service = new MyDefaultTokenServices();
         service.setClientDetailsService(clientDetailsService);
         service.setSupportRefreshToken(true);
         service.setTokenStore(tokenStore);
+        service.setAccessTokenValiditySeconds(accessTokenValiditySeconds);
         TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
         tokenEnhancerChain.setTokenEnhancers(Collections.singletonList(accessTokenConverter));
         service.setTokenEnhancer(tokenEnhancerChain);
