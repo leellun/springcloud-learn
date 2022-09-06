@@ -21,7 +21,7 @@ Nacos就是注册中心 + 配置中心的组合，即 Nacos = Eureka+Config +Bus
 ### 6.2 rocketmq cloud-stream-rocketmq
 ### 6.3 kafka cloud-stream-kafka
 ## 7 分布式链路追踪 cloud-rest sleuth+zipkin
-## 8 Sentinel熔断与限流 cloud-alibaba-sentinel
+## 8 Sentinel熔断与限流 cloud-alibaba-sentinel cloud-alibaba-sentinel-gateway网关限流
 ## 9 分布式事务
 ### 9.1 seata at模式 cloud-alibaba-seata
 ### 9.2 tcc cloud-hmily-tcc
