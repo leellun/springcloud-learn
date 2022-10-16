@@ -1,5 +1,6 @@
 package com.example.education.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +21,7 @@ public class CourseController {
      * 老师权限或学生权限
      */
     @GetMapping("/book")
-//    @PreAuthorize("hasAnyAuthority('teacher','student')")
+    @PreAuthorize("hasAnyAuthority('teacher','student')")
     public Object book() {
         Map<String, Object> map = new HashMap<>();
         map.put("book", "语文 数学 英语");

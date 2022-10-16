@@ -1,7 +1,8 @@
 package com.example.education2.security.config;
 
 import com.example.education2.filter.AuthenticationFilter;
-import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
+import com.example.education2.security.handler.CustomAccessDeniedHandler;
+import com.example.education2.security.handler.MyLoginUrlAuthenticationEntryPoint;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -18,9 +19,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
-    public AuthenticationFilter authenticationFilter(){
+    public AuthenticationFilter authenticationFilter() {
         return new AuthenticationFilter();
     }
+
     /**
      * 请求配置
      */
@@ -28,7 +30,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http.addFilterBefore(authenticationFilter(), UsernamePasswordAuthenticationFilter.class)
                 .antMatcher("/**").authorizeRequests()
-                .anyRequest().authenticated();
+                .anyRequest().authenticated()
+                .and()
+                .exceptionHandling()
+                .accessDeniedHandler(new CustomAccessDeniedHandler())
+                .authenticationEntryPoint(new MyLoginUrlAuthenticationEntryPoint());
     }
 
 

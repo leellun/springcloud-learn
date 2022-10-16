@@ -14,9 +14,18 @@ feign:
   httpclient:
     connection-timeout: 2000
     connection-timer-repeat: 3000
+
+# 信号量隔离机制
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          strategy: SEMAPHORE
+
 hystrix:
   command:
     default:
       execution:
         isolation:
-          strategy: SEMAPHORE
+          strategy: com.example.school.config.FeignHystrixConcurrencyStrategy

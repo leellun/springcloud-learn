@@ -21,10 +21,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- *
+ * 认证拦截，这里这个filter不需要
  */
-@Component
-@Order(1)
+//@Component
+//@Order(1)
 public class AuthenticationFilter extends OncePerRequestFilter {
 
     @Override

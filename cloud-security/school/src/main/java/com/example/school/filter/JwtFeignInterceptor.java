@@ -7,9 +7,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-/**
- * Created by fangzhipeng on 2017/7/28.
- */
 @Component
 public class JwtFeignInterceptor implements RequestInterceptor {
 

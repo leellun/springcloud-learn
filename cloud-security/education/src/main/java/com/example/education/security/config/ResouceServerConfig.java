@@ -1,6 +1,7 @@
 package com.example.education.security.config;
 
 import com.example.education.security.handler.CustomAccessDeniedHandler;
+import com.example.education.security.handler.MyLoginUrlAuthenticationEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -30,14 +31,15 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
 
 
     /**
-     *  资源配置
+     * 资源配置
      */
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
         resources.resourceId(RESOURCE_ID)
                 .tokenStore(tokenStore)
                 .stateless(true)
-                .accessDeniedHandler(new CustomAccessDeniedHandler());
+                .accessDeniedHandler(new CustomAccessDeniedHandler())
+                .authenticationEntryPoint(new MyLoginUrlAuthenticationEntryPoint());
     }
 
     /**
