@@ -1,8 +1,11 @@
 package com.example.school.security.config;
 
+import com.example.school.filter.AuthenticationFilter;
+import com.example.school.filter.JwtFeignInterceptor;
 import com.example.school.security.handler.CustomAccessDeniedHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -10,6 +13,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
  * 资源服务配置
@@ -45,6 +49,24 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
      */
     @Override
     public void configure(HttpSecurity http) throws Exception {
+//        http.addFilterBefore(new AuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+//        http
+//                // 由于使用的是JWT，我们这里不需要csrf
+//                .csrf().disable()
+//                // 基于token，所以不需要session
+//                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+//                .authorizeRequests()
+//                //.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+//                .antMatchers("/login").permitAll()
+//                // 对于获取token的rest api要允许匿名访问
+//                .antMatchers("/auth/**").permitAll()
+//                // 除上面外的所有请求全部需要鉴权认证
+//                .anyRequest().authenticated().and().exceptionHandling().accessDeniedHandler(new CustomAccessDeniedHandler());
+//
+//        // 禁用缓存
+//        http.headers().cacheControl().disable();
+
+
         http.authorizeRequests()
                 .antMatchers("/**").access("#oauth2.hasScope('ROLE_ADMIN')")
                 .and().csrf().disable()

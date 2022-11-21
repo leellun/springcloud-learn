@@ -29,7 +29,6 @@ import java.util.Map;
 @Slf4j
 public class GatewayFilterConfig implements GlobalFilter, Ordered {
 
-
     @Autowired
     private TokenStore tokenStore;
 

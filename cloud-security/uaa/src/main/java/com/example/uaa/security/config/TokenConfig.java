@@ -20,12 +20,11 @@ import java.util.Collections;
  */
 @Configuration
 public class TokenConfig {
-
+    private static final int accessTokenValiditySeconds = 60 * 60 * 12; // default 12 hours.
     /**
      * 秘钥串
      */
     private static final String SIGNING_KEY = "uaa";
-
 
     @Bean
     public TokenStore tokenStore() {
@@ -43,12 +42,13 @@ public class TokenConfig {
      * 配置令牌管理
      */
     @Bean
-    public AuthorizationServerTokenServices tokenService(ClientDetailsService clientDetailsService,TokenStore tokenStore
-            ,JwtAccessTokenConverter accessTokenConverter) {
+    public AuthorizationServerTokenServices tokenService(ClientDetailsService clientDetailsService, TokenStore tokenStore
+            , JwtAccessTokenConverter accessTokenConverter) {
         DefaultTokenServices service = new DefaultTokenServices();
         service.setClientDetailsService(clientDetailsService);
         service.setSupportRefreshToken(true);
         service.setTokenStore(tokenStore);
+        service.setAccessTokenValiditySeconds(accessTokenValiditySeconds);
         TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
         tokenEnhancerChain.setTokenEnhancers(Collections.singletonList(accessTokenConverter));
         service.setTokenEnhancer(tokenEnhancerChain);

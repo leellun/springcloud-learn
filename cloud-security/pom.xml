@@ -23,6 +23,7 @@
         <module>gateway</module>
         <module>uaa</module>
         <module>school</module>
+        <module>education</module>
     </modules>
     <dependencyManagement>
         <dependencies>

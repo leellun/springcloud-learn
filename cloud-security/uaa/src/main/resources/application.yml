@@ -13,7 +13,6 @@ spring:
     username: leellun
     password: liulun666
     driver-class-name: com.mysql.cj.jdbc.Driver
-
 mybatis-plus:
   mapper-locations: classpath:/mapper/*.xml
   global-config:

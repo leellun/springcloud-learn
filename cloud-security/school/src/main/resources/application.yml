@@ -8,3 +8,24 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+feign:
+  hystrix:
+    enabled: true
+  httpclient:
+    connection-timeout: 2000
+    connection-timer-repeat: 3000
+
+# 信号量隔离机制
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          strategy: SEMAPHORE
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: com.example.school.config.FeignHystrixConcurrencyStrategy

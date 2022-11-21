@@ -28,4 +28,10 @@ mybatis-plus:
   mapper-locations: classpath:xml/*.xml
 seata:
   tx-service-group: default_tx_group
+  config:
+    type: nacos
+    nacos:
+      group: SEATA_GROUP
+      server-addr: localhost:8848
+      namespace: 79c47038-2872-4d6f-a86f-f4aa71b96b13
 
