@@ -16,16 +16,27 @@ spring:
                 port: 5672
                 username: leellun
                 password: 123456
+                virtual-host: /
       bindings: # 服务的整合处理
         input: # 这个名字是一个通道的名称
           destination: studyExchange # 表示要使用的Exchange名称定义
           content-type: application/json # 设置消息类型，本次为对象json，如果是文本则设置“text/plain”
           binder: defaultRabbit # 设置要绑定的消息服务的具体设置
-  rabbitmq:
-    host: 192.168.66.11
-    port: 5672
-    username: leellun
-    password: 123456
+          group: route_queue1 # 要使用的消息队列名称
+
+      rabbit:
+        bindings:
+          input:
+            consumer:
+              # 消费者使用的交换机类型   如果已存在交换机名称，该类型必须与交换机类型一致
+              exchangeType: direct
+              # 消费者消息队列绑定的 routing key
+              bindingRoutingKey: info,waring,error
+              # 改配置会对上面的 routing key 进行处理
+              bindingRoutingKeyDelimiter: ","  # 该配置表示：使用,切割上面配置的routing key
+              # 消息确认模式   具体查看AcknowledgeMode
+              acknowledge-mode: manual
+              queueNameGroupOnly: true
 
 eureka:
   client: # 客户端进行Eureka注册的配置
