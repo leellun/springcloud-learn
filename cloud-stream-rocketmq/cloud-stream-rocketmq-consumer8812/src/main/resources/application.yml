@@ -5,7 +5,7 @@ spring:
     stream:
       rocketmq:
         binder:
-          name-server: 192.168.66.11:9876
+          name-server: 192.168.100.100:8876
       bindings:
         output:
           group: please_rename_unique_group_name

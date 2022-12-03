@@ -64,6 +64,8 @@ public class GatewayFilterConfig implements GlobalFilter, Ordered {
             ServerWebExchange build = exchange.mutate().request(tokenRequest).build();
             return chain.filter(build);
         } catch (InvalidTokenException e) {
+            DataBuffer buffer = exchange.getResponse().bufferFactory().wrap(new byte[1]);
+            exchange.getResponse().writeWith(Mono.just(buffer));
             log.info("无效的token: {}", token);
             return invalidTokenMono(exchange);
         }

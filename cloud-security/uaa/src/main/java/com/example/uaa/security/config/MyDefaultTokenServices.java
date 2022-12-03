@@ -11,6 +11,7 @@ import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.TokenRequest;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,6 +19,7 @@ import java.util.concurrent.TimeUnit;
  * Author: leell
  * Date: 2022/9/2 22:27:05
  */
+//@Component
 public class MyDefaultTokenServices extends DefaultTokenServices {
     private TokenStore tokenStore;
 
