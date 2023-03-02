@@ -1,0 +1,18 @@
+server:
+  port: 2002
+spring:
+  application:
+    name: seata-txx
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+seata:
+  tx-service-group: default_tx_group
+  config:
+    type: nacos
+    nacos:
+      group: SEATA_GROUP
+      server-addr: 192.168.100.100:31065
+      namespace: eb652337-fc10-4027-9e11-9484ef44f4b6
+      data-id: seataServerdev.properties
